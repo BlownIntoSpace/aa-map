@@ -32,7 +32,7 @@
 	
   //Creating the Mapvar minZoom = 2
     var minZoom = 2
-    var maxZoom = 8
+    var maxZoom = 7
 
     var map = new L.map('map', {
       crs: L.CRS.Simple,
@@ -52,15 +52,15 @@
       noWrap: true,
       minZoom: minZoom,
       maxNativeZoom: maxZoom,
-      maxZoom: maxZoom + 2
+      maxZoom: maxZoom //+ 2
     }).addTo(map);
 
     map.on('click', function(e) {console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());});
 	
-	map.setView( [-85, 70], 2);
+	map.setView( [-9, 130], 2);
 
     //Boundaries Variables
-    var mapSW = [0,0], mapNE = [-180,150];
+    var mapSW = [-192,256], mapNE = [0,0];
 	map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
 
     </script>

@@ -33,7 +33,7 @@
 	
   //Creating the Mapvar minZoom = 2
     var minZoom = 2
-    var maxZoom = 8
+    var maxZoom = 7
 
     var map = new L.map('map', {
       crs: L.CRS.Simple,
@@ -47,7 +47,7 @@
     })
 
 
-    L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+    L.tileLayer('./tiles/{z}/{x}/{y}.webp', {
       continuousWorld: false,
       attribution: 'Continents by Bailey Allen and Alec Jordan | <a href="./sources/hashtaria.jpg">Download</a>',
       noWrap: true,

@@ -47,7 +47,7 @@
     })
 
 
-    L.tileLayer('./tiles/{z}/{x}/{y}.webp', {
+    L.tileLayer('./tiles/continent/{z}/{x}/{y}.webp', {
       continuousWorld: false,
       attribution: 'Continents by Bailey Allen and Alec Jordan | <a href="./sources/hashtaria.jpg">Download</a>',
       noWrap: true,
@@ -56,12 +56,21 @@
       maxZoom: maxZoom + 2
     }).addTo(map);
 
-    map.on('click', function(e) {console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());});
+  var scale = L.tileLayer('./tiles/scale/{z}/{x}/{y}.webp', {
+    continuousWorld: false,
+    noWrap: true,
+    minZoom: minZoom,
+    maxNativeZoom: maxZoom,
+    maxZoom: maxZoom + 2
+  })
+
+
+  map.on('click', function(e) {console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());});
 	
 	map.setView( [-85, 70], 2);
 
     //Boundaries Variables
-    var mapSW = [-180,150], mapNE = [0,0];
+    var mapSW = [-280,250], mapNE = [100,-100];
 	map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
 
   //Icons
@@ -566,6 +575,7 @@ var cityBallymena = L.marker([0, 0], {icon: city}).on('click', function(){window
 
 //Marker Overlay
   var overlays={
+    "Scale" : scale,
     "Cities" : groupCities,
     "Towns" : groupTowns,
     "Trading Posts" : groupTradingPosts,
@@ -579,8 +589,6 @@ var cityBallymena = L.marker([0, 0], {icon: city}).on('click', function(){window
 
 //GROUP CONTROLS
   L.control.layers(null, overlays).addTo(map);
-  
-L.control.scale({metric: false, unitsPer1000px: 10}).addTo(map);
 
     </script>
 

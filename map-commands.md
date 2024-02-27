@@ -9,7 +9,7 @@ conda activate gdal
 
 ## Hashtaria
 ```
-gdal2tiles.py -p raster -z 2-8 -w leaflet --xyz -x -v --tiledriver=PNG ./hashtaria/map.png ./hashtaria/tiles
+gdal2tiles.py -p raster -z 2-8 -w leaflet --xyz -x -v --tiledriver=WEBP ./hashtaria/map.png ./hashtaria/tiles/continent
 
 ```
 

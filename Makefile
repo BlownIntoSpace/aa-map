@@ -10,8 +10,8 @@ hashtaria:
 	rm -rf ./hashtaria/tiles
 	gdal2tiles.py -p raster -z 2-7 -w leaflet --xyz -x -v --tiledriver=WEBP ./hashtaria/exports/base.png ./hashtaria/tiles/continent
 	gdal2tiles.py -p raster -z 2-7 -w leaflet --xyz -x -v --tiledriver=WEBP ./hashtaria/exports/hexes.png ./hashtaria/tiles/scale
-	gdal2tiles.py -p raster -z 4-7 -w leaflet --xyz -x -v --tiledriver=WEBP ./hashtaria/exports/label_high.png ./hashtaria/tiles/label
-        gdal2tiles.py -p raster -z 2-3 -w leaflet --xyz -x -v --tiledriver=WEBP ./hashtaria/exports/label_low.png ./hashtaria/tiles/label
+	gdal2tiles.py -p raster -z 4-7 -w leaflet --xyz -x -v --tiledriver=WEBP ./hashtaria/exports/label_small.png ./hashtaria/tiles/label
+        gdal2tiles.py -p raster -z 2-3 -w leaflet --xyz -x -v --tiledriver=WEBP ./hashtaria/exports/label_large.png ./hashtaria/tiles/label
 	gdal2tiles.py -p raster -z 2-7 -w leaflet --xyz -x -v --tiledriver=WEBP ./hashtaria/exports/path.png ./hashtaria/tiles/path
 	find ./hashtaria/tiles -type d -empty -delete
 

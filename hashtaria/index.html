@@ -89,10 +89,10 @@
 
       map.on('click', function(e) {console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());});
 
-      map.setView( [-85, 70], 2);
+      map.setView( [-160, 90], 2);
 
       //Boundaries Variables
-      var mapSW = [-280,250], mapNE = [100,-100];
+      var mapSW = [-380,350], mapNE = [200,-200];
       map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
 
       //Icons

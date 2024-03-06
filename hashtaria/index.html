@@ -50,7 +50,7 @@
       // Base Map Layer
       L.tileLayer('./tiles/continent/{z}/{x}/{y}.webp', {
         continuousWorld: false,
-        attribution: 'Continents by Bailey Allen and Alec Jordan | <a href="./map.png">Download</a>',
+        attribution: 'Continents by Bailey Allen and Alec Jordan | <a href="./hashtaria.pdf">Download</a>',
         noWrap: true,
         minZoom: minZoom,
         maxNativeZoom: maxZoom,
@@ -104,10 +104,11 @@
         tooltipAnchor: [0, 32],
       });
 
-      var cityBallymena = L.marker([-174.55, 68.37], {icon: city}).on('click', function(){window.location = "./loralel/hammerbak"});
+      var cityHammerbak = L.marker([-174.55, 68.37], {icon: city}).on('click', function(){window.location = "./loralel/hammerbak"});
+      var cityLorosh = L.marker([-159.71, 85.15], {icon: city}).on('click', function(){window.location = "./loralel/lorosh"});
 
       //Marker Groups
-      var groupCities = L.layerGroup([cityBallymena]).addTo(map);
+      var groupLinks = L.layerGroup([cityHammerbak, cityLorosh]).addTo(map);
 
       //Marker Overlay
       var overlays={

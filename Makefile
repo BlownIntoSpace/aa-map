@@ -28,9 +28,12 @@ hashtaria_cities:
 	$(CONDA_ACTIVATE) gdal
 	cd ./hashtaria/loralel/hammerbak
 	rm -rf ./tiles
-	gdal2tiles.py -p raster -z 2-7 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/hammerbak.png ./tiles
+	gdal2tiles.py -p raster -z 2-6 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/hammerbak.png ./tiles
 	find ./tiles -type d -empty -delete
-	cd ../..
+	cd ../../loralel/lorosh
+	rm -rf ./tiles
+	gdal2tiles.py -p raster -z 2-6 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/lorosh.png ./tiles
+	find ./tiles -type d -empty -delete
 
 .PHONY: middleearth
 middleearth:

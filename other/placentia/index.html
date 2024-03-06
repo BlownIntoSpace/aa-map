@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Placentia</title>
+    <link rel="icon" type="image/x-icon" href="https://em-content.zobj.net/source/google/387/ship_1f6a2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/scripts/leaflet/leaflet.css">
+    <script src="/scripts/leaflet/leaflet.js"></script>
+  </head>
+  <style>
+    #map {
+      height: 100%;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-attachment: fixed;
+      background-position: center center;
+      background-image: url("../../images/ocean.gif");
+
+    }
+
+  </style>
+  
+  <body>
+    <div id="map" style="width: 100%; height: 100%; background-color:#ffffff"></div>
+    <script type="text/javascript">
+
+      //Creating the Mapvar minZoom = 2
+      var minZoom = 2
+      var maxZoom = 4
+
+      var map = new L.map('map', {
+        crs: L.CRS.Simple,
+        center: [0, 0],
+        zoom: 3,
+        //scrollWheelZoom: false,
+        //zoomDelta: 6,
+        wheelPxPerZoomLevel: 512,
+        minZoom: minZoom,
+        maxZoom: maxZoom
+      })
+
+
+      // Bottom Deck Layer
+      L.tileLayer('./tiles/bottomdeck/{z}/{x}/{y}.webp', {
+        continuousWorld: false,
+        attribution: 'Galleon ship texture by <a href="https://2minutetabletop.com/product/galleon-ship/">2-Minute Tabletop</a>',
+        noWrap: true,
+        minZoom: minZoom,
+        maxNativeZoom: maxZoom,
+        maxZoom: maxZoom + 2
+      }).addTo(map);
+
+      // Mid Deck Layer
+      var middeck = L.tileLayer('./tiles/middeck/{z}/{x}/{y}.webp', {
+        continuousWorld: false,
+        noWrap: true,
+        minZoom: minZoom,
+        maxNativeZoom: maxZoom,
+        maxZoom: maxZoom + 2
+      }).addTo(map);
+
+      // Top Deck Layer
+      var topdeck = L.tileLayer('./tiles/topdeck/{z}/{x}/{y}.webp', {
+        continuousWorld: false,
+        noWrap: true,
+        minZoom: minZoom,
+        maxNativeZoom: maxZoom,
+        maxZoom: maxZoom + 2
+      }).addTo(map);
+
+      // Sails
+      var sails = L.tileLayer('./tiles/sails/{z}/{x}/{y}.webp', {
+        continuousWorld: false,
+        noWrap: true,
+        minZoom: minZoom,
+        maxNativeZoom: maxZoom,
+        maxZoom: maxZoom + 2
+      }).addTo(map);
+
+      // Crowsnest
+      var crowsnest = L.tileLayer('./tiles/crowsnest/{z}/{x}/{y}.webp', {
+        continuousWorld: false,
+        noWrap: true,
+        minZoom: minZoom,
+        maxNativeZoom: maxZoom,
+        maxZoom: maxZoom + 2
+      }).addTo(map);
+
+
+
+
+      map.on('click', function(e) {console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());});
+
+      map.setView( [-30, 60], 2);
+
+      //Boundaries Variables
+      var mapSW = [-380,350], mapNE = [200,-200];
+      map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
+
+      //Marker Overlay
+      var overlays={
+        "Mid-Deck" : middeck,
+        "Top-Deck" : topdeck,
+        "Sails" : sails,
+        "Crows Nest" : crowsnest,
+      }
+
+      //GROUP CONTROLS
+      L.control.layers(null, overlays).addTo(map);
+
+    </script>
+  </body>
+</html>

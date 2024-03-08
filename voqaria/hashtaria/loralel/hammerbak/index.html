@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hammerbak</title>
+  <link rel="icon" type="image/x-icon" href="https://em-content.zobj.net/thumbs/120/google/350/world-map_1f5fa-fe0f.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/_scripts/leaflet/leaflet.css">
+  <script src="/_scripts/leaflet/leaflet.js"></script>
+</head>
+<style>
+  #map {
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-image: url("/_images/paper.webp");
+  }
+
+</style>
+
+<body>
+<div id="map" style="width: 100%; height: 100%; background-color:#ffffff"></div>
+<script type="text/javascript">
+
+  //Creating the Mapvar minZoom = 2
+  var minZoom = 2
+  var maxZoom = 6
+
+  var map = new L.map('map', {
+    crs: L.CRS.Simple,
+    center: [0, 0],
+    zoom: 3,
+    //scrollWheelZoom: false,
+    //zoomDelta: 6,
+    wheelPxPerZoomLevel: 512,
+    minZoom: minZoom,
+    maxZoom: maxZoom
+  })
+
+
+  // Bottom Deck Layer
+  L.tileLayer('./tiles/{z}/{x}/{y}.webp', {
+    continuousWorld: false,
+    attribution: 'Hammerbak Map by Bailey Allen and Alec Jordan | <a href="./hammerbak.pdf">Download</a>',
+    noWrap: true,
+    minZoom: minZoom,
+    maxNativeZoom: maxZoom,
+    maxZoom: maxZoom + 2
+  }).addTo(map);
+
+
+  map.on('click', function(e) {console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());});
+
+  map.setView( [-80, 60], 2);
+
+
+</script>
+</body>
+</html>

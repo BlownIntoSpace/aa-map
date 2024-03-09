@@ -1,8 +1,113 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Redirecting</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="3; URL=./hashtaria/" />
-</head>
+  <head>
+    <title>Voqaria</title>
+    <link rel="icon" type="image/x-icon" href="https://em-content.zobj.net/thumbs/120/google/350/world-map_1f5fa-fe0f.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/_scripts/leaflet/leaflet.css">
+    <script src="/_scripts/leaflet/leaflet.js"></script>
+  </head>
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-attachment: fixed;
+      background-position: center center;
+      background-size: cover;
+      background-image: url("/_images/paper.webp");
+      background-color: #ffffff;
+      mix-blend-mode: multiply;
+
+    }
+
+  </style>
+  
+  <body>
+    <div id="map" style="width: 100%; height: 100%; background-color:#ffffff"></div>
+    <script type="text/javascript">
+
+      //Creating the Mapvar minZoom = 2
+      var minZoom = 2
+      var maxZoom = 5
+
+      var map = new L.map('map', {
+        crs: L.CRS.Simple,
+        center: [0, 0],
+        zoom: 3,
+        //scrollWheelZoom: false,
+        //zoomDelta: 6,
+        wheelPxPerZoomLevel: 512,
+        minZoom: minZoom,
+        maxZoom: maxZoom
+      })
+
+
+      // Base Map Layer
+      L.tileLayer('./tiles/continents/{z}/{x}/{y}.webp', {
+        continuousWorld: false,
+        attribution: 'Voqaria Map by Bailey Allen and Alec Jordan | <a href="./voqaria.pdf">Download</a>',
+        noWrap: true,
+        minZoom: minZoom,
+        maxNativeZoom: maxZoom,
+        maxZoom: maxZoom + 2
+      }).addTo(map);
+
+
+      // // Scale Layer
+      // var scale = L.tileLayer('./tiles/scale/{z}/{x}/{y}.webp', {
+      //   continuousWorld: false,
+      //   noWrap: true,
+      //   minZoom: minZoom,
+      //   maxNativeZoom: maxZoom,
+      //   maxZoom: maxZoom + 2
+      // })
+
+      // High Zoom Label Layer
+      var label = L.tileLayer('./tiles/label/{z}/{x}/{y}.webp', {
+        continuousWorld: false,
+        noWrap: true,
+        minZoom: minZoom,
+        maxNativeZoom: maxZoom,
+        maxZoom: maxZoom + 2
+      }).addTo(map);
+
+
+
+      map.on('click', function(e) {console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());});
+
+      map.setView( [-50, 100], 2);
+
+      //Boundaries Variables
+      var mapSW = [-380,500], mapNE = [250,-250];
+      map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
+
+      //Icons
+      var city = L.icon({
+        iconUrl:       '/_icons/transparent.png',
+        iconSize:    [64, 64],
+        iconAnchor:  [32, 32],
+        popupAnchor: [0, 32],
+        tooltipAnchor: [0, 32],
+      });
+
+      var continentHashtaria = L.marker([-27.3125, 62.6875], {icon: city}).on('click', function(){window.location = "./hashtaria"});
+
+      //Marker Groups
+      var groupLinks = L.layerGroup([continentHashtaria]).addTo(map);
+
+      //Marker Overlay
+      var overlays={
+        "Labels" : label,
+      }
+
+      //GROUP CONTROLS
+      L.control.layers(null, overlays).addTo(map);
+
+    </script>
+  </body>
 </html>

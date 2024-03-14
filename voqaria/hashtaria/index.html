@@ -107,8 +107,14 @@
       var cityHammerbak = L.marker([-174.55, 68.37], {icon: city}).on('click', function(){window.location = "./loralel/hammerbak"});
       var cityLorosh = L.marker([-159.71, 85.15], {icon: city}).on('click', function(){window.location = "./loralel/lorosh"});
 
+      var cityIvansong = L.marker([-155.86, 90.41], {icon: city}).on('click', function(){window.location = "./loralel/ivansong/ivansong.webp"});
+      var cityLyskov = L.marker([-138.73, 46.49], {icon: city}).on('click', function(){window.location = "./valberor/lyskov/lyskov.webp"});
+      var cityOutolin = L.marker([-154.84, 56.76], {icon: city}).on('click', function(){window.location = "./valberor/outolin/outolin.jpg"});
+      var cityValvere = L.marker([-137.06, 64.80], {icon: city}).on('click', function(){window.location = "./valberor/valvere/valvere.webp"});
+
+
       //Marker Groups
-      var groupLinks = L.layerGroup([cityHammerbak, cityLorosh]).addTo(map);
+      var groupLinks = L.layerGroup([cityHammerbak, cityLorosh, cityIvansong, cityLyskov, cityOutolin, cityValvere]).addTo(map);
 
       //Marker Overlay
       var overlays={

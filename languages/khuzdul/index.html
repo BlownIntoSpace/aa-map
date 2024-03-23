@@ -9,9 +9,21 @@
     <link href="https://upload.wikimedia.org/wikipedia/commons/6/62/Certh_5.svg" rel="icon" type="image/x-icon"/>
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        footer {
+            position: sticky;
+            top: 100vh;
+            padding:10px;
+        }
+    </style>
+
 </head>
 
-<body style="height: 100vh;">
+<body>
 <main class="container-fluid">
     <hgroup>
     <h1>Neo-Khuzdul Translator</h1>
@@ -19,19 +31,17 @@
     </hgroup>
 
     <form id="form">
-        <div>
-
-            <label for="user-input">
-                <input
-                type="search"
-                name="search"
-                aria-label="Search"
-                id="user-input"
-                placeholder="Enter Search Term" />
-            </label>
-        </div>
+        <label for="user-input">
+            <input
+            type="search"
+            name="search"
+            aria-label="Search"
+            id="user-input"
+            placeholder="Enter Search Term" />
+        </label>
     </form>
 
+    <div class="overflow-auto">
     <table>
         <thead>
         <tr>
@@ -41,16 +51,27 @@
         </thead>
         <tbody>
     </table>
+    </div>
 
     </main>
 
-    <footer style="position: sticky; top: 100vh; padding:10px; margin:0px">
+    <footer>
+        <div class="grid">
+            <div style="width:80vw;">
+                <cite>Based on <a href="https://github.com/jurgenarias/movies" >jurgenarias/movies</a> on GitHub.</cite>
+                <br />
+                <cite>Dwarven translations by <a href="https://www.dwarrowscholar.com/">The Dwarrow Scholar</a>. Support them on <a href="https://www.patreon.com/dwarrowscholar">Patreon</a>.</cite>
+                <br />
+                <cite>Original Khuzdul Language by J.R.R. Tolkein.</cite>
+            </div>
+            <div>
+                <label>
+                    <input name="Complex" id ="complex" type="checkbox" role="switch" />
+                    Complex Mode
+                </label>
+            </div>
+        </div>
 
-        <cite>Based on <a href="https://github.com/jurgenarias/movies" >jurgenarias/movies</a> on GitHub.</cite>
-        <br />
-        <cite>Dwarven translations by <a href="https://www.dwarrowscholar.com/">The Dwarrow Scholar</a>. Support them on <a href="https://www.patreon.com/dwarrowscholar">Patreon</a>.</cite>
-        <br />
-        <cite>Original Khuzdul Language by J.R.R. Tolkein.</cite>
 
     </footer>
 

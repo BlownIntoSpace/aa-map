@@ -23,14 +23,29 @@ d3.csv("dwarvish.csv").then(function (data) {
     // console.log(filteredData.length)
 
     output = filteredData
+    var english_table = "English"
+
+    if (complexMode) {
+      english_table = "Complex"
+    }
 
     for (var i = 0; i < filteredData.length; i++) {
       // console.log(output[i]['Neo-Khuzdul'])
       // console.log(output[i]['English'])
       // d3.select("tbody>tr>td").text(output[i]['Neo-Khuzdul']);
-      d3.select("tbody").insert("tr").html("<td>"+(output[i]['Neo-Khuzdul'])+"</td><td>"+(output[i]['English'])+"</td>") }
+      d3.select("tbody").insert("tr").html("<td><a href='https://www.tecendil.com/?q=" + (output[i]['Neo-Khuzdul'])+"&mode=erebor'  class='contrast'>"+(output[i]['Neo-Khuzdul'])+"</a></td><td>"+(output[i][english_table])+"</td>") }
   };
   window.resizeTo(screen.width,screen.height)
+});
 
+let complexMode = false;
 
+document.addEventListener('DOMContentLoaded', function() {
+  var toggleComplex = document.getElementById('complex');
+
+  toggleComplex.addEventListener('click', function() {
+    complexMode = !complexMode;
+    console.log(complexMode);
+    this.classList.toggle('active');
+  });
 });

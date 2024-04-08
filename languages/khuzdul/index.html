@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head>
+<head xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="light dark" name="color-scheme"/>
@@ -17,7 +17,7 @@
         footer {
             position: sticky;
             top: 100vh;
-            padding:10px;
+            padding: 10px;
         }
     </style>
 
@@ -26,54 +26,63 @@
 <body>
 <main class="container-fluid">
     <hgroup>
-    <h1>Neo-Khuzdul Translator</h1>
-    <p>Enter an English word, to search for the Khuzdul Equivalent</p>
+        <h1>Neo-Khuzdul Translator</h1>
+        <p>Enter an English word, to search for the Khuzdul Equivalent</p>
     </hgroup>
 
-    <form id="form">
-        <label for="user-input">
-            <input
-            type="search"
-            name="search"
-            aria-label="Search"
-            id="user-input"
-            placeholder="Enter Search Term" />
-        </label>
-    </form>
-
-    <div class="overflow-auto">
-    <table>
-        <thead>
-        <tr>
-            <th scope="col">Neo-Khuzdul</th>
-            <th scope="col">English</th>
-        </tr>
-        </thead>
-        <tbody>
-    </table>
-    </div>
-
-    </main>
-
-    <footer>
-        <div class="grid">
-            <div style="width:80vw;">
-                <cite>Based on <a href="https://github.com/jurgenarias/movies" >jurgenarias/movies</a> on GitHub.</cite>
-                <br />
-                <cite>Dwarven translations by <a href="https://www.dwarrowscholar.com/">The Dwarrow Scholar</a>. Support them on <a href="https://www.patreon.com/dwarrowscholar">Patreon</a>.</cite>
-                <br />
-                <cite>Original Khuzdul Language by J.R.R. Tolkein.</cite>
+    <form id="form" style="display: flex; flex-wrap: wrap; column-gap: 20px;">
+        <div style="flex-grow: 4;">
+            <label for="user-input">
+                <input
+                        aria-label="Search"
+                        id="user-input"
+                        name="search"
+                        placeholder="Enter Search Term"
+                        type="search"/>
+            </label>
+        </div>
+        <div style="display: flex; flex-wrap: nowrap; flex-direction:column;">
+            <div>
+                <label>
+                    <input id="complex" name="Complex" role="switch" type="checkbox">Complex
+                </label>
             </div>
             <div>
                 <label>
-                    <input name="Complex" id ="complex" type="checkbox" role="switch" />
-                    Complex Mode
+                    <input id="language" name="Language" role="switch" type="checkbox"><span id="langDisplay">English</span>
                 </label>
             </div>
         </div>
+    </form>
+
+    <div class="overflow-auto">
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">Neo-Khuzdul</th>
+                <th scope="col">English</th>
+            </tr>
+            </thead>
+            <tbody>
+        </table>
+    </div>
+
+</main>
+
+<footer>
+    <div class="grid">
+        <div style="width:80vw;">
+            <cite>Based on <a href="https://github.com/jurgenarias/movies">jurgenarias/movies</a> on GitHub.</cite>
+            <br/>
+            <cite>Dwarven translations by <a href="https://www.dwarrowscholar.com/">The Dwarrow Scholar</a>. Support
+                them on <a href="https://www.patreon.com/dwarrowscholar">Patreon</a>.</cite>
+            <br/>
+            <cite>Original Khuzdul Language by J.R.R. Tolkein.</cite>
+        </div>
+    </div>
 
 
-    </footer>
+</footer>
 
 <script src="script.js"></script>
 

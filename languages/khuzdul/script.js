@@ -19,7 +19,15 @@ d3.csv("dwarvish.csv").then(function (data) {
     // console.log(inputValue.length);
     // console.log(dictionary);
 
-    var filteredData = dictionary.filter(dictionary => dictionary.English.toLowerCase().trim().includes(inputValue));
+    var filteredData = []
+
+    if (!languageMode) {
+      filteredData = dictionary.filter(dictionary => dictionary["English"].toLowerCase().trim().includes(inputValue));
+    } else {
+      filteredData = dictionary.filter(dictionary => dictionary["Neo-Khuzdul"].toLowerCase().trim().includes(inputValue));
+    }
+
+
     // console.log(filteredData.length)
 
     output = filteredData
@@ -39,13 +47,27 @@ d3.csv("dwarvish.csv").then(function (data) {
 });
 
 let complexMode = false;
+let languageMode = false;
 
 document.addEventListener('DOMContentLoaded', function() {
   var toggleComplex = document.getElementById('complex');
+  var toggleLanguage = document.getElementById('language');
 
   toggleComplex.addEventListener('click', function() {
     complexMode = !complexMode;
     console.log(complexMode);
     this.classList.toggle('active');
   });
+
+  toggleLanguage.addEventListener('click', function() {
+    languageMode = !languageMode;
+    console.log(languageMode);
+    this.classList.toggle('active');
+    if (!languageMode) {
+      document.getElementById("langDisplay").innerHTML = "English"
+    } else {
+      document.getElementById("langDisplay").innerHTML = "Khuzdul"
+    }
+  });
+
 });

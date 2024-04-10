@@ -112,9 +112,11 @@
       var cityOutolin = L.marker([-154.84, 56.76], {icon: city}).on('click', function(){window.location = "./valberor/outolin/outolin.jpg"});
       var cityValvere = L.marker([-137.06, 64.80], {icon: city}).on('click', function(){window.location = "./valberor/valvere/valvere.webp"});
 
+      var otherPlacentia = L.marker([-185.5, 57.09], {icon: city}).on('click', function(){window.location = "../other/placentia"});
+
 
       //Marker Groups
-      var groupLinks = L.layerGroup([cityHammerbak, cityLorosh, cityIvansong, cityLyskov, cityOutolin, cityValvere]).addTo(map);
+      var groupLinks = L.layerGroup([cityHammerbak, cityLorosh, cityIvansong, cityLyskov, cityOutolin, cityValvere, otherPlacentia]).addTo(map);
 
       //Marker Overlay
       var overlays={

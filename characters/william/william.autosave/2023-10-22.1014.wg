@@ -1,0 +1,203 @@
+WordGrinder dumpfile v3: this is a text file; diff me!
+.addons.autosave.enabled: true
+.addons.autosave.lastsaved: 1697922805
+.addons.autosave.pattern: "%F.autosave/%T.wg"
+.addons.autosave.period: 1
+.addons.htmlexport.bold_off: "</b>"
+.addons.htmlexport.bold_on: "<b>"
+.addons.htmlexport.italic_off: "</i>"
+.addons.htmlexport.italic_on: "<i>"
+.addons.htmlexport.underline_off: "</u>"
+.addons.htmlexport.underline_on: "<u>"
+.addons.pagecount.enabled: false
+.addons.pagecount.wordsperpage: 250
+.addons.scrapbook.document: "Scrapbook"
+.addons.scrapbook.pattern: "Item from '%N' at %T:"
+.addons.scrapbook.timestamp: true
+.addons.smartquotes.doublequotes: false
+.addons.smartquotes.leftdouble: "“"
+.addons.smartquotes.leftsingle: "‘"
+.addons.smartquotes.notinraw: true
+.addons.smartquotes.rightdouble: "”"
+.addons.smartquotes.rightsingle: "’"
+.addons.smartquotes.singlequotes: false
+.addons.spellchecker.enabled: false
+.addons.spellchecker.usesystemdictionary: true
+.addons.spellchecker.useuserdictionary: true
+.changed: true
+.clipboard.co: 1
+.clipboard.cp: 1
+.clipboard.cw: 1
+.clipboard.margin: 0
+.clipboard.viewmode: 1
+.clipboard.wordcount: 116
+.documents.1.co: 2
+.documents.1.cp: 8
+.documents.1.cw: 75
+.documents.1.margin: 0
+.documents.1.name: "main"
+.documents.1.sticky_selection: false
+.documents.1.viewmode: 1
+.documents.1.wordcount: 658
+.documents.2.co: 1
+.documents.2.cp: 4
+.documents.2.cw: 1
+.documents.2.margin: 0
+.documents.2.name: "User dictionary"
+.documents.2.viewmode: 1
+.documents.2.wordcount: 53
+.fileformat: 8
+.justchanged: false
+.menu.accelerators.BACKSPACE: "ZDPC"
+.menu.accelerators.DELETE: "ZDNC"
+.menu.accelerators.DOWN: "ZD"
+.menu.accelerators.EC: "^C"
+.menu.accelerators.ECadd: "^M"
+.menu.accelerators.ECfind: "^L"
+.menu.accelerators.EF: "^F"
+.menu.accelerators.EG: "^G"
+.menu.accelerators.EN: "^K"
+.menu.accelerators.END: "ZE"
+.menu.accelerators.EP: "^V"
+.menu.accelerators.ER: "^R"
+.menu.accelerators.ET: "^X"
+.menu.accelerators.Eredo: "^Y"
+.menu.accelerators.Eundo: "^Z"
+.menu.accelerators.FQ: "^Q"
+.menu.accelerators.FS: "^S"
+.menu.accelerators.HOME: "ZH"
+.menu.accelerators.LEFT: "ZL"
+.menu.accelerators.PGDN: "ZPGDN"
+.menu.accelerators.PGUP: "ZPGUP"
+.menu.accelerators.RIGHT: "ZR"
+.menu.accelerators.SB: "^B"
+.menu.accelerators.SDOWN: "ZSD"
+.menu.accelerators.SEND: "ZSE"
+.menu.accelerators.SHOME: "ZSH"
+.menu.accelerators.SI: "^I"
+.menu.accelerators.SLEFT: "ZSL"
+.menu.accelerators.SO: "^O"
+.menu.accelerators.SP: "^P"
+.menu.accelerators.SPGDN: "ZSPGDN"
+.menu.accelerators.SPGUP: "ZSPGUP"
+.menu.accelerators.SRIGHT: "ZSR"
+.menu.accelerators.SU: "^U"
+.menu.accelerators.SUP: "ZSU"
+.menu.accelerators.S^DOWN: "ZSNP"
+.menu.accelerators.S^LEFT: "ZSWL"
+.menu.accelerators.S^PGDN: "ZSED"
+.menu.accelerators.S^PGUP: "ZSBD"
+.menu.accelerators.S^RIGHT: "ZSWR"
+.menu.accelerators.S^UP: "ZSPP"
+.menu.accelerators.UP: "ZU"
+.menu.accelerators.ZBD: "^PGUP"
+.menu.accelerators.ZD: "DOWN"
+.menu.accelerators.ZDNC: "DELETE"
+.menu.accelerators.ZDPC: "BACKSPACE"
+.menu.accelerators.ZDW: "^E"
+.menu.accelerators.ZE: "END"
+.menu.accelerators.ZED: "^PGDN"
+.menu.accelerators.ZH: "HOME"
+.menu.accelerators.ZL: "LEFT"
+.menu.accelerators.ZM: "^@"
+.menu.accelerators.ZNP: "^DOWN"
+.menu.accelerators.ZPGDN: "PGDN"
+.menu.accelerators.ZPGUP: "PGUP"
+.menu.accelerators.ZPP: "^UP"
+.menu.accelerators.ZR: "RIGHT"
+.menu.accelerators.ZSBD: "S^PGUP"
+.menu.accelerators.ZSD: "SDOWN"
+.menu.accelerators.ZSE: "SEND"
+.menu.accelerators.ZSED: "S^PGDN"
+.menu.accelerators.ZSH: "SHOME"
+.menu.accelerators.ZSL: "SLEFT"
+.menu.accelerators.ZSNP: "S^DOWN"
+.menu.accelerators.ZSPGDN: "SPGDN"
+.menu.accelerators.ZSPGUP: "SPGUP"
+.menu.accelerators.ZSPP: "S^UP"
+.menu.accelerators.ZSR: "SRIGHT"
+.menu.accelerators.ZSU: "SUP"
+.menu.accelerators.ZSW: "^W"
+.menu.accelerators.ZSWL: "S^LEFT"
+.menu.accelerators.ZSWR: "S^RIGHT"
+.menu.accelerators.ZU: "UP"
+.menu.accelerators.ZWL: "^LEFT"
+.menu.accelerators.ZWR: "^RIGHT"
+.menu.accelerators.^@: "ZM"
+.menu.accelerators.^B: "SB"
+.menu.accelerators.^C: "EC"
+.menu.accelerators.^DOWN: "ZNP"
+.menu.accelerators.^E: "ZDW"
+.menu.accelerators.^F: "EF"
+.menu.accelerators.^G: "EG"
+.menu.accelerators.^I: "SI"
+.menu.accelerators.^K: "EN"
+.menu.accelerators.^L: "ECfind"
+.menu.accelerators.^LEFT: "ZWL"
+.menu.accelerators.^M: "ECadd"
+.menu.accelerators.^O: "SO"
+.menu.accelerators.^P: "SP"
+.menu.accelerators.^PGDN: "ZED"
+.menu.accelerators.^PGUP: "ZBD"
+.menu.accelerators.^Q: "FQ"
+.menu.accelerators.^R: "ER"
+.menu.accelerators.^RIGHT: "ZWR"
+.menu.accelerators.^S: "FS"
+.menu.accelerators.^U: "SU"
+.menu.accelerators.^UP: "ZPP"
+.menu.accelerators.^V: "EP"
+.menu.accelerators.^W: "ZSW"
+.menu.accelerators.^X: "ET"
+.menu.accelerators.^Y: "Eredo"
+.menu.accelerators.^Z: "Eundo"
+.name: "/home/bailey/Campaigns/Voqaria/Characters/William/william.wg"
+.statusbar: false
+.current: 1
+#clipboard
+Q At this stage, I feel it important to mention, there were many rumours about the true origin of Willk Balxzaar Lon Mosh, whether he was truly heir to the throne of Prosheros or merely a fraud attempting to gain noteriety. While many in power dismissed Willk Balxzaar as such, the local Clergy named Willk Balxzaar faithful, and so many trusted his intent regardless. My use of the royal title for Heir when referring to Willk Balxzaar should not be taken as a confirmation of my own opinions in the matter. This is merely as a formality, and, it would be dishonourable in Prosheroshi custom to refer to them without if indeed Willk Balxzaar is truly heir.
+.
+#1
+H1 The Last Heir to Prosheros
+P King Gaddam died on the day of the new noon, the 2nd of Aran 754. Gaddam was the last Prosheroshi king of the unified Oklo-Prosheran commonwealth.
+P On the full moon of the same month, some 16 days after the death of the favoured King Gaddam, a controversial figure revealed themselves to the populus of Prosheros. Styling themselves Willk, after the style of Old Prosheros royalty, Willk Balxzaar declared himself the lost heir to house Mosh. The Mosh house was the primary ruling body in Prosheros from 609 to 719, after the death of the late king Haak Yehomilk Lon Mosh. In the year following the death of Haak Yehomilk, his eldest son Haak Addir Lon Mosh took the throne as Prosheros' last king before the Commonwealth. The full account of this era in Prosheroshi history is laid out in full on the 719 issue and the Octennial 720 issue of this volume, penned by my late father Ottokar Von Lilivin.
+P Needless to say, after the events of 720, naught was heard about the Mosh family, and many believed all remaining members of the house dead at the hands of Haak Addir himself. The intrigue that surrounded the return of house Mosh with the arrival of Willk Balxzaar is partially attributed to this fact. It is a well known fact that many in Prosheros are unhappy with the Oklo-Prosheran Commonwealth, believing it a destruction of their way of life. Many of the greater islands of Prosheros declared independence following the death of Haak Yehomilk during the civil war, and many more did so after the death of Haak Addir, and so, the commonwealth is often seen as illegitimate by those who had no say in its creation. This of course is not a topic for this account, therefore I urge the reader to study State and Society in Prosheros post Monarchy by the Prosheroshi author Sibil Len Bakron. Regardless of intent, the populus of Prosheros took to Willk Balxzaar fondly, and within months, he had half of Prosheros speaking his name.
+Q At this stage, I feel it important to mention, there were many rumours about the true origin of Willk Balxzaar Lon Mosh, whether he was truly heir to the throne of Prosheros or merely a fraud attempting to gain noteriety. While many in power dismissed Willk Balxzaar as such, the local Clergy named Willk Balxzaar faithful, and so many trusted his intent regardless. My use of the royal title for Heir when referring to Willk Balxzaar should not be taken as a confirmation of my own opinions in the matter. This is merely as a formality, and, it would be dishonourable in Prosheroshi custom to refer to them without if indeed Willk Balxzaar is truly heir.
+P Despite Willk Balxzaar's popularity, he had no way to reclaim the seat of house Mosh without unseating the current Merchantile structure. Following the death of Haak Addir, the Trade Companies of Prosheros, being generally the most influential in most regions thanks to the Trade Federation, elected their own leaders to rule their respective regions.
+P It was on the council of #### ### ###, a priest of the Prosheroshi religious sect, and one of Willk Balxzaar's advisors, that he should gain favour of the Trade Federation so that he may leverage their vast armada as leverage against the Okloroshi. It was therefore devised that he would offer his sisters hand in marriage to the head of the Trade Federation, Szanno Xobar Lon Yill.
+P To seal this pact, Willk Balxzaar and a retinue of seven of his closest companions boarded the flagship vessle of the Trade Federation fleet, lead by Szanno Xobar himself. This party included Willk Balxzaar himself, his sister and greatest advisor Baala Asherah, the priest #### ####, three swordsmen of renown by the names of ####, ####, and ####, and two of Willk Balxzaars closest friends by the names of ### ###, and #### ####. 
+.
+#2
+P This is your user dictionary --- place words, one at a time, in V paragraphs and they will be considered valid in your document.
+V Federation
+V Trade
+V Okloroshi
+V Baalat
+V Willk
+V Balxzaar's
+V Prosheroshi
+V Prosheros
+V Companies
+V Addir
+V Haak
+V Mosh
+V Balxzaar
+V Clergy
+V Heir
+V Sibil
+V Bakron
+V Society
+V State
+V Monarchy
+V Commonwealth
+V Oklo-Prosheran
+V Yehomilk
+V Lilivin
+V Von
+V Ottokar
+V Octennial
+V Gaddam
+V 
+V 2nd
+V Aran
+V King
+.

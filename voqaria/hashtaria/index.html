@@ -8,125 +8,134 @@
     <script src="/scripts/leaflet/leaflet.js"></script>
   </head>
   <style>
-    body {
-      height: 100%;
+    body  {
+      width: 100vw;
+      height: 100vh;
       margin: 0;
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      background-image: url("/images/paper.webp");
+      -webkit-mix-blend-mode: multiply;
+      -moz-mix-blend-mode: multiply;
+      -o-mix-blend-mode: multiply;
+      -ms-mix-blend-mode: multiply;
+      mix-blend-mode:multiply;
+      will-change: opacity;
+      background-color: transparent;
       background-attachment: fixed;
       background-position: center center;
       background-size: cover;
-      background-image: url("/images/paper.webp");
-      background-color: #c9ba9c;
-      mix-blend-mode: multiply;
+      z-index: -1;
     }
-
   </style>
   
   <body>
-    <div id="map" style="width: 100%; height: 100%; background-color:transparent"></div>
-    <script type="text/javascript">
 
-      //Creating the Mapvar minZoom = 2
-      var minZoom = 2
-      var maxZoom = 7
+  <div id="paper"></div>
+      <div id="map" style="width: 100%; height: 100%; background-color:transparent"></div>
 
-      var map = new L.map('map', {
-        crs: L.CRS.Simple,
-        center: [0, 0],
-        zoom: 3,
-        //scrollWheelZoom: false,
-        //zoomDelta: 6,
-        wheelPxPerZoomLevel: 512,
-        minZoom: minZoom,
-        maxZoom: maxZoom
-      })
+  <script type="text/javascript">
 
+    //Creating the Mapvar minZoom = 2
+    var minZoom = 2
+    var maxZoom = 7
 
-      // Base Map Layer
-      L.tileLayer('./tiles/continent/{z}/{x}/{y}.webp', {
-        continuousWorld: false,
-        attribution: 'Continents by Bailey Allen and Alec Jordan | <a href="./hashtaria.pdf">Download</a>',
-        noWrap: true,
-        minZoom: minZoom,
-        maxNativeZoom: maxZoom,
-        maxZoom: maxZoom + 2
-      }).addTo(map);
+    var map = new L.map('map', {
+      crs: L.CRS.Simple,
+      center: [0, 0],
+      zoom: 3,
+      //scrollWheelZoom: false,
+      //zoomDelta: 6,
+      wheelPxPerZoomLevel: 512,
+      minZoom: minZoom,
+      maxZoom: maxZoom
+    })
 
 
-      // Scale Layer
-      var scale = L.tileLayer('./tiles/scale/{z}/{x}/{y}.webp', {
-        continuousWorld: false,
-        noWrap: true,
-        minZoom: minZoom,
-        maxNativeZoom: maxZoom,
-        maxZoom: maxZoom + 2
-      })
-
-      // Path Layer
-      var path = L.tileLayer('./tiles/path/{z}/{x}/{y}.webp', {
-        continuousWorld: false,
-        noWrap: true,
-        minZoom: minZoom,
-        maxNativeZoom: maxZoom,
-        maxZoom: maxZoom + 2
-      }).addTo(map);
-
-      // High Zoom Label Layer
-      var label = L.tileLayer('./tiles/label/{z}/{x}/{y}.webp', {
-        continuousWorld: false,
-        noWrap: true,
-        minZoom: minZoom,
-        maxNativeZoom: maxZoom,
-        maxZoom: maxZoom + 2
-      }).addTo(map);
+    // Base Map Layer
+    L.tileLayer('./tiles/continent/{z}/{x}/{y}.webp', {
+      continuousWorld: false,
+      attribution: 'Continents by Bailey Allen and Alec Jordan | <a href="./hashtaria.pdf">Download</a>',
+      noWrap: true,
+      minZoom: minZoom,
+      maxNativeZoom: maxZoom,
+      maxZoom: maxZoom + 2
+    }).addTo(map);
 
 
+    // Scale Layer
+    var scale = L.tileLayer('./tiles/scale/{z}/{x}/{y}.webp', {
+      continuousWorld: false,
+      noWrap: true,
+      minZoom: minZoom,
+      maxNativeZoom: maxZoom,
+      maxZoom: maxZoom + 2
+    })
 
-      map.on('click', function(e) {console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());});
+    // Path Layer
+    var path = L.tileLayer('./tiles/path/{z}/{x}/{y}.webp', {
+      continuousWorld: false,
+      noWrap: true,
+      minZoom: minZoom,
+      maxNativeZoom: maxZoom,
+      maxZoom: maxZoom + 2
+    }).addTo(map);
 
-      map.setView( [-160, 90], 2);
-
-      //Boundaries Variables
-      var mapSW = [-380,350], mapNE = [200,-200];
-      map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
-
-      //Icons
-      var city = L.icon({
-        iconUrl:       '/icons/transparent.png',
-        iconSize:      [64, 64],
-        iconAnchor:    [32, 32],
-        popupAnchor:   [0, 32],
-        tooltipAnchor: [0, 32],
-      });
-
-      var cityHammerbak = L.marker([-174.55, 68.37], {icon: city}).on('click', function(){window.location = "./loralel/hammerbak"});
-      var cityLorosh = L.marker([-159.71, 85.15], {icon: city}).on('click', function(){window.location = "./loralel/lorosh"});
-
-      var cityIvansong = L.marker([-155.86, 90.41], {icon: city}).on('click', function(){window.location = "./loralel/ivansong/ivansong.webp"});
-      var cityLyskov = L.marker([-138.73, 46.49], {icon: city}).on('click', function(){window.location = "./valberor/lyskov/lyskov.webp"});
-      var cityOutolin = L.marker([-154.84, 56.76], {icon: city}).on('click', function(){window.location = "./valberor/outolin/outolin.jpg"});
-      var cityValvere = L.marker([-137.06, 64.80], {icon: city}).on('click', function(){window.location = "./valberor/valvere/valvere.webp"});
-
-      var otherPlacentia = L.marker([-185.5, 57.09], {icon: city}).on('click', function(){window.location = "../other/placentia"});
+    // High Zoom Label Layer
+    var label = L.tileLayer('./tiles/label/{z}/{x}/{y}.webp', {
+      continuousWorld: false,
+      noWrap: true,
+      minZoom: minZoom,
+      maxNativeZoom: maxZoom,
+      maxZoom: maxZoom + 2
+    }).addTo(map);
 
 
-      //Marker Groups
-      var groupLinks = L.layerGroup([cityHammerbak, cityLorosh, cityIvansong, cityLyskov, cityOutolin, cityValvere, otherPlacentia]).addTo(map);
 
-      //Marker Overlay
-      var overlays={
-        "Scale" : scale,
-        "Paths" : path,
-        "Labels" : label,
-      }
+    map.on('click', function(e) {console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());});
 
-      //GROUP CONTROLS
-      L.control.layers(null, overlays).addTo(map);
+    map.setView( [-160, 90], 2);
 
-    </script>
+    //Boundaries Variables
+    var mapSW = [-380,350], mapNE = [200,-200];
+    map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
+
+    //Icons
+    var city = L.icon({
+      iconUrl:       '/icons/transparent.png',
+      iconSize:      [64, 64],
+      iconAnchor:    [32, 32],
+      popupAnchor:   [0, 32],
+      tooltipAnchor: [0, 32],
+    });
+
+    var cityHammerbak = L.marker([-174.55, 68.37], {icon: city}).on('click', function(){window.location = "./loralel/hammerbak"});
+    var cityLorosh = L.marker([-159.71, 85.15], {icon: city}).on('click', function(){window.location = "./loralel/lorosh"});
+
+    var cityIvansong = L.marker([-155.86, 90.41], {icon: city}).on('click', function(){window.location = "./loralel/ivansong/ivansong.webp"});
+    var cityLyskov = L.marker([-138.73, 46.49], {icon: city}).on('click', function(){window.location = "./valberor/lyskov/lyskov.webp"});
+    var cityOutolin = L.marker([-154.84, 56.76], {icon: city}).on('click', function(){window.location = "./valberor/outolin/outolin.jpg"});
+    var cityValvere = L.marker([-137.06, 64.80], {icon: city}).on('click', function(){window.location = "./valberor/valvere/valvere.webp"});
+
+    var otherPlacentia = L.marker([-185.5, 57.09], {icon: city}).on('click', function(){window.location = "../other/placentia"});
+
+
+    //Marker Groups
+    var groupLinks = L.layerGroup([cityHammerbak, cityLorosh, cityIvansong, cityLyskov, cityOutolin, cityValvere, otherPlacentia]).addTo(map);
+
+    //Marker Overlay
+    var overlays={
+      "Scale" : scale,
+      "Paths" : path,
+      "Labels" : label,
+    }
+
+    //GROUP CONTROLS
+    L.control.layers(null, overlays).addTo(map);
+
+  </script>
   </body>
 </html>

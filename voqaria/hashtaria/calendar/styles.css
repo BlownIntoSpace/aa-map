@@ -1,0 +1,42 @@
+h1 {
+    text-align: center;
+    font-family: serif;
+}
+
+p {
+    text-align: justify;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    height: 16vh;
+    vertical-align: top;
+}
+
+body {
+    font-family: serif;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    vertical-align: top;
+}
+
+.flex-container > div {
+    width: 100px;
+    vertical-align: top;
+}
+
+.flex-container > img {
+    height: 3vh;
+    vertical-align: top;
+}
+
+.flex-container > p {
+    font-style: italic;
+}
+

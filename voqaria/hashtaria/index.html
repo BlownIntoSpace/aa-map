@@ -35,6 +35,9 @@
       height: 100vh;
       background-color: white;
     }
+    .multiply-blend-layer {
+      mix-blend-mode: multiply;
+    }
   </style>
   
   <body>
@@ -46,7 +49,8 @@
 
     //Creating the Mapvar minZoom = 2
     var minZoom = 2
-    var maxZoom = 7
+    var nativeZoom = 7
+    var maxZoom = nativeZoom + 2
 
     var map = new L.map('map', {
       crs: L.CRS.Simple,
@@ -66,18 +70,31 @@
       attribution: 'Hashtaria, by Bailey Allen and Alec Jordan | <a href="./hashtaria.pdf">Download</a>',
       noWrap: true,
       minZoom: minZoom,
-      maxNativeZoom: maxZoom,
-      maxZoom: maxZoom + 2
+      maxNativeZoom: nativeZoom,
+      maxZoom: maxZoom
     }).addTo(map);
 
 
     // Scale Layer
     var scale = L.tileLayer('./tiles/scale/{z}/{x}/{y}.webp', {
+      className: 'multiply-blend-layer',
+      opacity: 0.5,
       continuousWorld: false,
       noWrap: true,
       minZoom: minZoom,
-      maxNativeZoom: maxZoom,
-      maxZoom: maxZoom + 2
+      maxNativeZoom: nativeZoom,
+      maxZoom: maxZoom
+    })
+
+    // Territories Layer
+    var territories = L.tileLayer('./tiles/territories/{z}/{x}/{y}.webp', {
+      className: 'multiply-blend-layer',
+      opacity: 0.5,
+      continuousWorld: false,
+      noWrap: true,
+      minZoom: minZoom,
+      maxNativeZoom: nativeZoom,
+      maxZoom: maxZoom
     })
 
     // Path Layer
@@ -85,8 +102,8 @@
       continuousWorld: false,
       noWrap: true,
       minZoom: minZoom,
-      maxNativeZoom: maxZoom,
-      maxZoom: maxZoom + 2
+      maxNativeZoom: nativeZoom,
+      maxZoom: maxZoom
     }).addTo(map);
 
     // High Zoom Label Layer
@@ -94,8 +111,8 @@
       continuousWorld: false,
       noWrap: true,
       minZoom: minZoom,
-      maxNativeZoom: maxZoom,
-      maxZoom: maxZoom + 2
+      maxNativeZoom: nativeZoom,
+      maxZoom: maxZoom
     }).addTo(map);
 
 
@@ -134,6 +151,7 @@
     //Marker Overlay
     var overlays={
       "Scale" : scale,
+      "Territories" : territories,
       "Paths" : path,
       "Labels" : label,
     }

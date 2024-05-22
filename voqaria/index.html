@@ -5,35 +5,21 @@
     <link rel="icon" type="image/x-icon" href="https://em-content.zobj.net/thumbs/120/google/350/world-map_1f5fa-fe0f.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/scripts/leaflet/leaflet.css">
+    <link rel="stylesheet" href="/scripts/map.css">
     <script src="/scripts/leaflet/leaflet.js"></script>
   </head>
-  <style>
-    body {
-      height: 100%;
-      margin: 0;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-attachment: fixed;
-      background-position: center center;
-      background-size: cover;
-      background-image: url("/images/paper.webp");
-      background-color: #ffffff;
-      mix-blend-mode: multiply;
-
-    }
-
-  </style>
   
   <body>
-    <div id="map" style="width: 100%; height: 100%; background-color:#ffffff"></div>
+    <div id="paper">
+      <div id="map"></div>
+    </div>
+
     <script type="text/javascript">
 
       //Creating the Mapvar minZoom = 2
       var minZoom = 2
-      var maxZoom = 7
+      var nativeZoom = 7
+      var maxZoom = nativeZoom
 
       var map = new L.map('map', {
         crs: L.CRS.Simple,
@@ -53,8 +39,8 @@
         attribution: 'Voqaria Map by Bailey Allen and Alec Jordan | <a href="./voqaria.pdf">Download</a>',
         noWrap: true,
         minZoom: minZoom,
-        maxNativeZoom: maxZoom,
-        maxZoom: maxZoom + 2
+        maxNativeZoom: nativeZoom,
+        maxZoom: maxZoom
       }).addTo(map);
 
 
@@ -63,17 +49,26 @@
       //   continuousWorld: false,
       //   noWrap: true,
       //   minZoom: minZoom,
-      //   maxNativeZoom: maxZoom,
-      //   maxZoom: maxZoom + 2
+      //   maxNativeZoom: nativeZoom,
+      //   maxZoom: maxZoom
       // })
 
-      // High Zoom Label Layer
+      // temperature Layer
+      var temperature = L.tileLayer('./tiles/temperature/{z}/{x}/{y}.webp', {
+        continuousWorld: false,
+        noWrap: true,
+        minZoom: minZoom,
+        maxNativeZoom: nativeZoom,
+        maxZoom: maxZoom
+      });
+
+      //  Label Layer
       var label = L.tileLayer('./tiles/label/{z}/{x}/{y}.webp', {
         continuousWorld: false,
         noWrap: true,
         minZoom: minZoom,
-        maxNativeZoom: maxZoom,
-        maxZoom: maxZoom + 2
+        maxNativeZoom: nativeZoom,
+        maxZoom: maxZoom
       }).addTo(map);
 
 
@@ -102,6 +97,7 @@
 
       //Marker Overlay
       var overlays={
+        "Temperature" : temperature,
         "Labels" : label,
       }
 

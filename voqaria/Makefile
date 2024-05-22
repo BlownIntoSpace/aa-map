@@ -16,8 +16,10 @@ uninstall:
 voqaria:
 	$(CONDA_ACTIVATE) gdal
 	rm -rf ./tiles
-	gdal2tiles.py -p raster -z 2-7 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/base.png ./tiles/continents
-	gdal2tiles.py -p raster -z 2-7 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/label.png ./tiles/label
+	mkdir ./tiles
+	gdal2tiles.py -p raster -z 2-7 --processes=6 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/base.png ./tiles/continents
+	gdal2tiles.py -p raster -z 2-7 --processes=6 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/label.png ./tiles/label
+	gdal2tiles.py -p raster -z 2-7 --processes=6 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/temperature.png ./tiles/temperature
 	find ./tiles -type d -empty -delete
 
 .PHONY: hashtaria

@@ -1,0 +1,30 @@
+html, body {
+    background-color: white;
+    margin: 0;
+    padding:0;
+    width: 100vw;
+    height: 100vh;
+}
+#paper  {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("https://acorn.blowninto.space/images/paper.webp");
+    background-color: transparent;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+#map {
+    mix-blend-mode:multiply;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+.multiply-blend-layer {
+    mix-blend-mode: multiply;
+}

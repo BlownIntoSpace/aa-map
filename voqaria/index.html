@@ -56,6 +56,17 @@
       // temperature Layer
       var temperature = L.tileLayer('./tiles/temperature/{z}/{x}/{y}.webp', {
         continuousWorld: false,
+        className: 'multiply-blend-layer',
+        opacity:0.8,
+        noWrap: true,
+        minZoom: minZoom,
+        maxNativeZoom: nativeZoom,
+        maxZoom: maxZoom
+      });
+
+      // temperature legend Layer
+      var legend = L.tileLayer('./tiles/legend/{z}/{x}/{y}.webp', {
+        continuousWorld: false,
         noWrap: true,
         minZoom: minZoom,
         maxNativeZoom: nativeZoom,
@@ -92,12 +103,14 @@
 
       var continentHashtaria = L.marker([-27.3125, 62.6875], {icon: city}).on('click', function(){window.location = "./hashtaria"});
 
+      var temperature_legend = L.layerGroup([temperature, legend]);
+
       //Marker Groups
       var groupLinks = L.layerGroup([continentHashtaria]).addTo(map);
 
       //Marker Overlay
       var overlays={
-        "Temperature" : temperature,
+        "Temperature" : temperature_legend,
         "Labels" : label,
       }
 

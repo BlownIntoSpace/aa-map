@@ -20,6 +20,7 @@ voqaria:
 	gdal2tiles.py -p raster -z 2-7 --processes=6 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/base.png ./tiles/continents
 	gdal2tiles.py -p raster -z 2-7 --processes=6 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/label.png ./tiles/label
 	gdal2tiles.py -p raster -z 2-7 --processes=6 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/temperature.png ./tiles/temperature
+	gdal2tiles.py -p raster -z 2-7 --processes=6 -w leaflet --xyz -x -v --tiledriver=WEBP ./exports/legend.png ./tiles/legend
 	find ./tiles -type d -empty -delete
 
 .PHONY: hashtaria

@@ -18,3 +18,4 @@ middleearth:
 	$(CONDA_ACTIVATE) gdal
 	rm -rf ./middleearth/tiles
 	gdal2tiles.py -p raster -z 2-7 -w leaflet --xyz -x -v --tiledriver=WEBP ./middleearth/mapome.png ./middleearth/tiles
+

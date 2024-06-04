@@ -1,3 +1,6 @@
 [submodule "characters/character_sheets"]
 	path = characters/character_sheets
 	url = https://github.com/rpgtex/DND-5e-LaTeX-Template
+[submodule "maps"]
+	path = maps
+	url = https://github.com/acorn-archive/maps

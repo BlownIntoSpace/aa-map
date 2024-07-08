@@ -15,10 +15,10 @@ LAYERS[scale]=$MIN_SCALE-$MAX_SCALE
 
 # Re-create directories
 echo "Removing old tiles and exports..."
-# rm -r ${EXPORT_DIR}
-# mkdir ${EXPORT_DIR}
-# rm -r ${TILE_DIR}
-# mkdir ${TILE_DIR}
+rm -r ${EXPORT_DIR}
+mkdir ${EXPORT_DIR}
+rm -r ${TILE_DIR}
+mkdir ${TILE_DIR}
 
 
 # echo "Generating tiles for $FILENAME, with layer ids: ${(k)LAYERS}"
@@ -26,12 +26,13 @@ echo "Removing old tiles and exports..."
 # echo "WARNING! Exporting svg layers takes a VERY long time. Please be patient. Inkscape may show as Not Responding, ignore this if possible."
 # echo "WARNING! SVGs with pixel dimensions larger than 32000px in any direction will not be exported properly. Please ensure image size is less than 32000px, there is no check in place to ensure this does not happen."
 
-# # Export INKSCAPE Layers
-# for ID in ${(k)LAYERS}
-# do
-#     inkscape $FILENAME -i $ID --app-id-tag=ACORNEXPORT --export-area-page --export-id-only --export-filename=${EXPORT_DIR}/${ID}.png
-#     echo "Exported to $EXPORT_DIR/${ID}.png"
-# done
+
+# Export INKSCAPE Layers
+for ID in ${(k)LAYERS}
+do
+    inkscape $FILENAME -i $ID --app-id-tag=ACORNEXPORT --export-area-page --export-id-only --export-filename=${EXPORT_DIR}/${ID}.png
+    echo "Exported to $EXPORT_DIR/${ID}.png"
+done
 
 # create new conda environment
 echo "Creating conda environment"
